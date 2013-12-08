@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+  <div class="col-md-9 col-md-push-3">
+
+  <div id="test"></div>
+  </div>
+  <div class="col-md-3 col-md-pull-9">
+
+    <a href="#" class="btn btn-primary btn-lg active" role="button">make a ajax request</a>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+    $( "a" ).click(function( event ) {
+
+{#        $.ajax({#}
+{#            url: "/test",#}
+{#            type:"get",#}
+{#            dataType:"json"#}
+{#            success: function( data ) {#}
+{#            console.info(data)#}
+{#            }#}
+{#        });#}
+
+     $.get("/test",function(data,status){
+      $("#test").text(data)
+    });
+
+    });
+
+});
+
+</script>
+</body>
+</html>
